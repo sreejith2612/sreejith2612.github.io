@@ -1,161 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #080808;
-            font-family: Arial, sans-serif;
-            color: #fff;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        .icons {
-            text-align: center;
-        }
-        .icons a {
-            text-decoration: none;
-            color: #fff;
-            margin: 10px;
-            font-size: 24px;
-        }
-        .icons a:hover {
-            color: #007bff;
-        }
-        .search-bar {
-            margin-top: 20px;
-            width: 350px;
-            text-align: center;
-        }
-        .search-bar input[type="text"] {
-            width: 100%;
-            padding: 15px;
-            font-size: 18px;
-            border: none;
-            border-radius: 25px;
-            background-color: #333;
-            color: #fff;
-            outline: none;
-        }
-        .search-bar input[type="text"]::placeholder {
-            color: #ccc;
-        }
-        .search-button {
-            margin-top: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 25px;
-            padding: 15px 20px;
-            cursor: pointer;
-        }
-        .search-button:hover {
-            background-color: #0056b3;
-        }
-        /* Popup styles */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 1;
-            justify-content: center;
-            align-items: center;
-        }
-        .popup-content {
-            background-color: #333;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
-        .popup input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            border: none;
-            border-radius: 5px;
-            background-color: #444;
-            color: #fff;
-        }
-        .popup button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-        .popup button:hover {
-            background-color: #0056b3;
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Include Font Awesome CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="icons">
-            <a href="https://www.cloudskillsboost.google" target="_blank"><i class="fa fa-cloud"></i></a>
-            <a href="https://learn.microsoft.com/en-us/users/sreejithmohan-6471/" target="_blank"><i class="fa-brands fa-microsoft"></i></a>
-            <a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://colab.research.google.com" target="_blank"><i class="fa-brands fa-google"></i></a>
-            <a href="https://huggingface.co" target="_blank"><i class="fa-solid fa-face-grin-wide"></i></a>
-            <a href="https://mail.google.com/mail/u/3/#inbox" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-            <a href="#" id="add-icon-button"><i class="fas fa-plus"></i></a> <!-- + icon to open the popup -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h1>Your Name</h1>
+            <p>Web Developer & Designer</p>
         </div>
-        <div class="search-bar">
-            <form action="https://www.google.com/search" method="GET" target="_self">
-                <input type="text" name="q" placeholder="Search " autocomplete="off">
-                <input class="search-button" type="submit" value="Search">
-            </form>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <!-- Add your portfolio items here -->
         </div>
-    </div>
+    </section>
 
-    <!-- Popup for adding new icons -->
-    <div class="popup" id="popup">
-        <div class="popup-content">
-            <h2>Add a new icon:</h2>
-            <input type="text" id="link" placeholder="Website link">
-            <input type="text" id="icon" placeholder="Icon class (Font Awesome)">
-            <button id="add-button">Add</button>
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Email: your.email@example.com</p>
+            <p>Phone: (123) 456-7890</p>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="https://www.twitter.com/yourprofile" target="_blank"><img src="twitter-icon.png" alt="Twitter"></a>
+                <a href="https://www.github.com/yourprofile" target="_blank"><img src="github-icon.png" alt="GitHub"></a>
+            </div>
+            <a href="your-resume.pdf" download><button>Download Resume</button></a>
         </div>
-    </div>
-
-    <script>
-        const addIconButton = document.getElementById("add-icon-button");
-        const popup = document.getElementById("popup");
-        const addIconBtn = document.getElementById("add-button");
-
-        addIconButton.addEventListener("click", () => {
-            popup.style.display = "flex";
-        });
-
-        addIconBtn.addEventListener("click", () => {
-            const link = document.getElementById("link").value;
-            const icon = document.getElementById("icon").value;
-            if (link && icon) {
-                const iconsContainer = document.querySelector(".icons");
-                const newIcon = document.createElement("a");
-                newIcon.href = link;
-                newIcon.target = "_blank";
-                newIcon.innerHTML = `<i class="${icon}"></i>`;
-                iconsContainer.insertBefore(newIcon, addIconButton);
-                document.getElementById("link").value = "";
-                document.getElementById("icon").value = "";
-                popup.style.display = "none";
-            }
-        });
-    </script>
+    </section>
 </body>
 </html>
